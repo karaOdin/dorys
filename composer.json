@@ -11,10 +11,13 @@
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
+        "rinvex/laravel-bookings": "^3.0",
+        "sendinblue/api-v3-sdk": "6.x.x",
+        "spatie/laravel-newsletter": "^4.8",
         "tcg/voyager": "^1.4"
     },
     "require-dev": {

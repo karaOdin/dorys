@@ -7,110 +7,117 @@
 <div class="page-nav no-margin row">
     <div class="container">
         <div class="row">
-            <h2>Our Events</h2>
+            <h2>{{ __("Nos événements") }}</h2>
             <ul>
-                <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><i class="fas fa-angle-double-right"></i> Events</li>
+                <li> <a href="#"><i class="fas fa-home"></i> {{ __("Home") }}</a></li>
+                <li><i class="fas fa-angle-double-right"></i> {{ __("Events") }}</li>
             </ul>
         </div>
     </div>
 </div>
 
 
-
-
-
-   <!-- ******************** Upcomming Events Starts Here ******************* -->
-
-<section class="upcomming container-flid">
+<?php
+   $pap=DB::table('events')
+   ->select("events.*")
+   ->where('etat','0')
+   ->get();
+   ?>
+ <section class="upcomming container-flid">
     <div class="container">
         <div class="session-title row">
-            <p>KNOW AND COME TO JOIN OUR</p>
-            <h2>UPCOMING EVENTS</h2>
+
+            <h2>{{ __("événement passé") }}</h2>
         </div>
-        <div class="events-row row">
-            <div class="col-md-4">
-                <div class="event-card">
-                    <img src="assets/images/event/e1.jpg" alt="">
-                    <div class="event-detail">
-                        <h4>Fund Raising Event</h4>
-                        <p>Estibulum at maximus neque. Etiam interdum fermentum dolor, eget placerat lorem.</p>
+        @foreach($pap as $pop)
+        <div class="card-group">
+     <form method="POST" action="{{route('avenir',[app()->getLocale(),$pop->id])}}">
+            {{ csrf_field() }}
+            @csrf
 
-                        <h6>25 <sup>Th</sup> Mar 2020</h6>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('/storage/'.$pop->image) }}" class="card-img-tsop" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title center">{{ $pop->title }}</h5>
+                  <p class="card-text">{{ $pop->theme }}</p>
+                  <h6>{{ $pop->date }}</h6>
+                </div>
+
+                <div class="plac-dat row no-margin">
+                    <div class="col-7 colplac colplacll">
+                        <strong>{{ __("PLACE:") }}</strong>
+                        <p>{{ $pop->place }}</p>
                     </div>
-                    <div class="plac-dat row no-margin">
-                        <div class="col-7 colplac colplacll">
-                            <strong>PLACE:</strong>
-                            <p>EASTER COAST HOTEL, CA</p>
-                        </div>
-                        <div class="col-5 colplac">
-                             <strong>TICKET:</strong>
-                            <p>FREE OF COST</p>
-                        </div>
+                    <div class="col-5 colplac">
+                        <input type="submit" value="{{ $pop->title }}" name="id" class="btn btn-primary btn-lg active" >
                     </div>
                 </div>
-            </div>
-             <div class="col-md-4">
-                <div class="event-card">
-                    <img src="assets/images/event/e2.jpg" alt="">
-                    <div class="event-detail">
-                        <h4>Fund Raising Event</h4>
-                        <p>Estibulum at maximus neque. Etiam interdum fermentum dolor, eget placerat lorem.</p>
+            </form>
+              </div>
 
-                        <h6>25 <sup>Th</sup> Mar 2020</h6>
-                    </div>
-                    <div class="plac-dat row no-margin">
-                        <div class="col-7 colplac colplacll">
-                            <strong>PLACE:</strong>
-                            <p>EASTER COAST HOTEL, CA</p>
-                        </div>
-                        <div class="col-5 colplac">
-                             <strong>TICKET:</strong>
-                            <p>FREE OF COST</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="event-card">
-                    <img src="assets/images/event/e3.jpg" alt="">
-                    <div class="event-detail">
-                        <h4>Fund Raising Event</h4>
-                        <p>Estibulum at maximus neque. Etiam interdum fermentum dolor, eget placerat lorem.</p>
+              @endforeach
 
-                        <h6>25 <sup>Th</sup> Mar 2020</h6>
-                    </div>
-                    <div class="plac-dat row no-margin">
-                        <div class="col-7 colplac colplacll">
-                            <strong>PLACE:</strong>
-                            <p>EASTER COAST HOTEL, CA</p>
-                        </div>
-                        <div class="col-5 colplac">
-                             <strong>TICKET:</strong>
-                            <p>FREE OF COST</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 </section>
 
-
-
-
-<!-- ******************** Footer Starts Here ******************* -->
-<div class="footer-ablove">
+<?php
+$pap=DB::table("events")
+->select("events.*")
+->where('etat','1')
+->get();
+?>
+ <section class="upcomming container-flid">
     <div class="container">
-        <div class="row">
-            <p>Looking For Exclusive Services?
-                <button class="btn btn-default">Donate Now</button>
-            </p>
-        </div>
-    </div>
-</div>
-</section>
+        <div class="session-title row">
 
+            <h2>{{ __("évènement à venir") }}</h2>
+        </div>
+
+        @foreach($pap as $pap)
+        <div class="card" style="width:auto;">
+            <img src="{{ asset('/storage/'.$pap->image) }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <ul>
+           <strong><h5 class="card-title center">{{ $pap->title }}</h5></strong>
+              <p class="card-text">{{ $pap->theme }}</p>
+
+        <li>
+            <?php $brochur = json_decode($pap->brochure);
+
+            ?>
+            @foreach($brochur as $brch)
+
+            <h6>{{ $pap->resumer }}</h6></li>
+            <a href="/storage/{{$brch->download_link }}" download=""class="btn btn-info btn-lg active"><strong>{{ __("le programme") }}</strong> </a></div>
+
+            @endforeach
+
+        </ul>
+
+            <div class="plac-dat row no-margin">
+                <div class="col-6 colplac colplacll">
+                    <strong>PLACE:</strong>
+                    <ul>
+                        <li><p>{{ $pap->place }}</p></li>
+
+                    <li> <h6>{{ $pap->date }}</h6></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-6 colplac ">
+                    <a href="{{ route('reservation',app()->getLocale())}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true" name={{ $pap->id }}>{{ __("s'inscrire") }}</a>
+                </div>
+
+            </div>
+          </div>
+          @endforeach
+    </div>
+
+  </section>
+   <!-- ******************** Upcomming Events Starts Here ******************* -->
 
 
 @endsection

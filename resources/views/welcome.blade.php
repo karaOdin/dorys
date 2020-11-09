@@ -17,8 +17,8 @@
                         <div class="row">
                             <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
                                 <div class="animated bounceInDown slider-captions">
-                                    <h1 class="slider-title">We Care More than 1000 Students Education</h1>
-                                    <p class="slider-text hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                                    <h1 class="slider-title"></h1>
+
 
                                 </div>
                             </div>
@@ -32,8 +32,8 @@
                     <div class="row">
                         <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
                             <div class="slider-captions ">
-                                <h1 class="slider-title">It's time for better help.</h1>
-                                <p class="slider-text hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                                <h1 class="slider-title">{{ __("Association de Lutte Contre la Drepanocytose") }}</h1>
+
 
                             </div>
                         </div>
@@ -41,13 +41,13 @@
                 </div>
             </div>
             <div class="item">
-                <div class="slider-img"><img src="assets/images/slider/slider-2.jpg" alt=""></div>
+                <div class="slider-img"><img src="assets/images/slider/slider-3.jpg" alt=""></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
                             <div class="slider-captions ">
-                                <h1 class="slider-title">Sponser a Child Today</h1>
-                                <p class="slider-text hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                                <h1 class="slider-title"></h1>
+                                <p class="slider-text hidden-xs"></p>
 
                             </div>
                         </div>
@@ -69,15 +69,18 @@
             <div class="about-row row">
                 <div class="col-md-8">
                     <div class="abut-detail">
-                         <h4>BUILDING SCHOOL IN AFRICAN COMMUNITIES.</h4>
-                        <p>Integer vulputate vehicula dolor a eleifend. Duis aliquam condimentum sapien, eget tempor justo. Aenean porttitor nibh metus, sollicitudin egestas metus posuere et . Fusce egestas volutpat metus, in sodales sem bibendum porta. Nunc hendrerit nunc sit </p> <p> Amet tellus posuere, at malesuada sem gravida. Integer maximus ultricies augue, at dapibus elit bibendum consequat. Cras faucibus tellus eleifend, fermentum purus in, dapibus sapien. Praesent nec ornare risus. Etiam iaculis, ligula vel gravida vestibulum, urna justo posuere ante, id pretium massa arcu sed mi. Nunc a sollicitudin sem. Duis tempus</p>
+                         <h4>{{__("Drépanocytose : qu'est-ce que c'est ?")}}</h4>
+                      <p>{{ __("La Drépanocytose est une maladie génétique due à une anomalie de l’hémoglobine contenue dans les globules rouges provocant leur déformation et leur destruction")}}.
+                        {{ __("Leur destruction entraîne une anémie chronique sévère et leur déformation s’accompagne de troubles circulatoires très douloureux. C’est la maladie génétique la plus répandue dans le monde mais méconnue. Elle touche environ 50 millions de personnes avec une prédilection pour l’Afrique Noire. Près de la moitié des enfants atteints de cette maladie meurent avant d’être dépistés dans les pays en voie de développement") }}
+                        {{ __("Il existe aujourd’hui des traitements mais aucun ne conduit à une guérison totale. C’est pourquoi l’essentiel du traitement consiste en la prise en charge des symptômes résultant des crises : transfusion, oxygénothérapie, hydratation, analgésie.") }}
+                        </p>) }}
                     </div>
 
 
 
                 </div>
                 <div class="col-md-4">
-                    <img src="assets/images/about_img.png" alt="">
+                    <img src="assets/images/about_img.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -86,179 +89,186 @@
 <div class="we-are-making container-fluid">
     <div class="row">
         <div class="col-lg-6 imag-part">
-            <img src="assets/images/count.jpg" alt="">
+            <img src="assets/images/count.png" alt="">
         </div>
         <div class="col-lg-6 text-part">
             <h3>{{ __('Symptomes') }}</h3>
-            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    <ul class="list-unstyled">
+        {{ __('Dans sa forme homozygote, la drépanocytose se traduit chez l\'enfant de 12-18 mois par :') }}</ul>
+
+    <li >
+        <ul class="col-sm-12">
+               <li style="list-style-type: disc">{{ __('Un ictère') }}</li>
+                <li style="list-style-type: disc">{{ __('Un teint pâle') }}</li>
+                <li style="list-style-type: disc">{{ __('Un gros foie') }}</li>
+                <li style="list-style-type: disc">{{ __('Une grosse rate') }}</li>
+                <li style="list-style-type:disc" >{{ __('Des crises douloureuses abdominales et des douleurs des membres') }}</li>
+
+            </ul>
+     </li>
 
 
-        </div>
-    </div>
+<p>{{ __('D\'autres symptômes sont moins évocateurs :')}}</p>
+
+    <ul class="col-sm-12">
+
+                                      <li  style="list-style-type: disc">{{ __('Infections respiratoires à répétition')}}</li>
+                                      <li  style="list-style-type: disc">{{ __('Convulsions') }}</li>
+                                      <li  style="list-style-type: disc">{{ __('Coma') }}</li>
+                                      <li style="list-style-type: disc">{{ __('Paralysies') }}</li>
+                                      <li style="list-style-type: disc">{{ ('Insuffisance cardiaque') }}</li>
+                                      <li style="list-style-type: disc">{{ ('Hématurie') }}</li>
+
+    </ul>
+
+
+
 </div>
 
      <!-- ******************** Services Starts Here ******************* -->
 
-     <section class="services container-fluid">
-         <div class="container">
-            <div class="session-title">
-                <p>approfondir</p>
-                <h2>parlons plus de ca</h2>
-            </div>
-            <div class="service-row row">
-                <div class="col-md-4">
-                    <div class="servic-col">
-                        <a href="#">
-                        <div class="servic-round">
-                           <p>probleme</p>
-                        </a>
-                        </div>
-                        <h4>les complications de  la drépanocytose</h4>
-                        <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking </p>
-                    </div>
-                </div>
-                 <div class="col-md-4">
+     {{-- $tat=DB::table("posts") --}}
+     {{-- ->select("posts.*") --}}
+     {{-- ->get(); --}}
 
-                    <div class="servic-col">
-                        <a href="#">
-                        <div class="servic-round">
-                            <p>traitement</p>
-                        </a>
 
-                        </div>
-
-                        <h4> voir les traitments</h4>
-                        <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking </p>
-                    </div>
-                </div>
-                 <div class="col-md-4">
-                    <div class="servic-col">
-                        <a href="#">
-                        <div class="servic-round">
-                            <p>depistage</p>
-                            <a>
-                        </div>
-                        <h4>comment reconnaitre la drepanocytose</h4>
-                        <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking </p>
-                    </div>
-                </div>
-            </div>
-         </div>
-     </section>
-
-     <section class="services container-fluid">
-           <div class="service-row row">
-               <div class="col-md-4">
-                   <div class="servic-col">
-                    <a href="#">
-                       <div class="servic-round">
-                          <p>Glossaire</p>
-                       </a>
-                       </div>
-                       <h4>votre petit dectionaire</h4>
-                       <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking </p>
-                   </div>
-               </div>
-                <div class="col-md-4">
-                   <div class="servic-col">
-                    <a href="#">
-                       <div class="servic-round">
-                           <p>histoire</p>
-                       </a>
-                       </div>
-                       <h4>historique de drepanocytose</h4>
-                       <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking </p>
-                   </div>
-               </div>
-                <div class="col-md-4">
-                   <div class="servic-col">
-                    <a href="#">
-                       <div class="servic-round">
-                           <p>conseils</p>
-                       </a>
-                       </div>
-                       <h4>Conseils de prévention</h4>
-                       <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking </p>
-                   </div>
-               </div>
+      <section class="services container-fluid">
+        <div class="container">
+           <div class="session-title">
+               <p>{{ __("approfondir") }}</p>
+               <h2>{{ __("parlons plus de ca") }}parlons plus de ca</h2>
            </div>
-        </div>
+           <div class="service-row row">
+                @foreach($post as $posts)
+
+                <div class="col-md-4">
+
+                    <div class="servic-col">
+                        <form method="POST" action="{{route('approfond',[app()->getLocale(),$posts->id])}}">
+                     {{ csrf_field() }}
+
+
+<input type="submit" value="{{ $posts->title }}" name="id" class="btn btn-outline-info" >
+
+                           </form>
+
+
+
+                          <h4>{{ $posts->title }}</h4>
+                           <p>{{ $posts->excerpt }} </p>
+                    </div>
+               </div>
+              @endforeach
+           </div>
+          </div>
     </section>
 
 
 
      <!-- ******************** Services Starts Here ******************* -->
-
-
+     <?php
+     $tot=DB::table("Mores")
+     ->select("Mores.*")
+     ->where('id','2')
+     ->get();
+     ?>
+  <?php
+  $tit=DB::table("Mores")
+  ->select("Mores.*")
+  ->where('id','1')
+  ->get();
+  ?>
+<?php
+$tat=DB::table("Mores")
+->select("Mores.*")
+->where('id','3')
+->get();
+?>
      <section class="container-fluid causes">
         <div class="container">
             <div class="session-title row">
-            <p>un peu plus?</p>
-            <h2>suivi nous</h2>
+            <p>{{ __("un peu plus?") }}</p>
+            <h2>{{ __("suivez nous") }}</h2>
         </div>
-        <div class="cuses-row row">
+        <div class="cuses-row row" style="max-width:auto;">
+            @foreach($tot as $past)
+
             <div class="col-md-4">
-                <div class="causen-ccover">
+                 <div class="causen-ccover">
 
 
                 <div class="caus-img">
-                    <img src="assets/images/causes/c1.jpg" alt="">
+                    <img src="{{ asset('/storage/'.$past->image) }}" alt="">
                 </div>
 
                 <div class="caus-detail">
-                    <h4>vivre avec la drepanocytose</h4>
-                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <h4>{{ $past->title }}</h4>
+                    <p>{{ $past->detail }}</p>
                 </div>
 
                 <div class="donat-btn">
-                    <a href="#" class="btn btn-danger">voire</a>
+                    <a href="{{route('moelle',app()->getLocale())}}"class="btn btn-danger">voire</a>
                 </div>
+
 
             </div>
 
             </div>
-
-            <div class="col-md-4">
-                <div class="causen-ccover">
+            @endforeach
 
 
-                <div class="caus-img">
-                    <img src="assets/images/causes/c2.jpg" alt="">
-                </div>
-                <div class="caus-detail">
-                    <h4>greffe de moelle</h4>
-                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                </div>
 
-                <div class="donat-btn">
-                    <a href="#" class="btn btn-danger">voire</a>
-                </div>
+               @foreach($tit as $past)
 
-            </div>
-
-            </div>
-
-            <div class="col-md-4">
-                <div class="causen-ccover">
+               <div class="col-md-4">
+                    <div class="causen-ccover">
 
 
-                <div class="caus-img">
-                    <img src="assets/images/causes/c3.jpg" alt="">
-                </div>
+                   <div class="caus-img">
+                       <img src="{{ asset('/storage/'.$past->image) }}" alt="">
+                   </div>
 
-                <div class="caus-detail">
-                    <h4>les nouvelles recherches</h4>
-                    <p>he point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                </div>
+                   <div class="caus-detail">
+                       <h4>{{ $past->title }}</h4>
+                       <p>{{ $past->detail }}</p>
+                   </div>
 
-                <div class="donat-btn">
-                    <a href="#" class="btn btn-danger">voire</a>
-                </div>
+                   <div class="donat-btn">
+                       <a href="{{route('vivredrepa',app()->getLocale())}}"class="btn btn-danger">voire</a>
+                   </div>
 
-            </div>
 
-            </div>
-        </div>
+               </div>
+
+               </div>
+               @endforeach
+
+                  @foreach($tat as $past)
+
+                  <div class="col-md-4">
+                       <div class="causen-ccover">
+
+
+                      <div class="caus-img">
+                          <img src="{{ asset('/storage/'.$past->image) }}" alt="">
+                      </div>
+
+                      <div class="caus-detail">
+                          <h4>{{ $past->title }}</h4>
+                          <p>{{ $past->detail }}</p>
+                      </div>
+
+                      <div class="donat-btn">
+                          <a href="{{route('recherche',app()->getLocale())}}"class="btn btn-danger">voire</a>
+                      </div>
+
+
+                  </div>
+
+                  </div>
+                  @endforeach
+              </div>
+
         </div>
 
      </section>

@@ -21,20 +21,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 logo-dv">
-                        <img src="assets/images/logo.jpg" alt="">
-                    </div>
-                    <div class="col-md-9 bonto">
-                        <ul>
-                            <li><div class="donta-btn">
-                                <p>Please make your</p>
-                                <strong>Dontatin</strong>
-                            </div></li>
-                            <li><div class="voltterr-btn">
-                                <p>Time to Becom a</p>
-                                <strong>Volunteer</strong>
-                            </div></li>
-                        </ul>
-                    </div>
+
+                        <a href="/"><img src="/storage/{{setting('site.logo')}}" alt=""></a>
+
                 </div>
             </div>
         </div>
@@ -48,7 +37,7 @@
                        <nav class="navbar navbar-expand-lg navbar-light">
                            <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                language
+                               {{ __("language") }}
                             </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <ul class="navbar-nav ml-auto">
@@ -59,6 +48,8 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route(Route::currentRouteName(), 'fr') }}" class="nav-link">FR</a>
+                            </li> <li class="nav-item">
+                                <a href="{{ route(Route::currentRouteName(), 'pt') }}" class="nav-link">PT</a>
                             </li>
                                      <li class="nav-item">
                                         <language-switcher
@@ -90,19 +81,19 @@
                                 <a class="nav-link" href="{{route('welcome',app()->getLocale()) }}">{{__("drepanocytose")}} </a>
                               </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="{{route('dorys',app()->getLocale()) }}" >dorys</a>
+                              <a class="nav-link" href="{{route('dorys',app()->getLocale()) }}" >{{ __("Dorys") }}</a>
                               </li>
-                             {{-- <li class="nav-item">
-                             <a class="nav-link " href="{{route('patient',app()->getLocale()) }}"  >patients</a>
+
+                            {{-- <a class="nav-link " href="{{route('topic',app()->getLocale()) }}"  >patients</a> --}}
+
+                               <li class="nav-item">
+                                <a class="nav-link " href="{{route('congrè',app()->getLocale()) }}" ><p>{{ __("congrès") }}</p></a>
+                              </li>
+                               {{-- <li class="nav-item">
+                                <a class="nav-link " href="{{route('login',app()->getLocale()) }} " >espace membre</a>
                               </li> --}}
                                <li class="nav-item">
-                                <a class="nav-link " href="{{route('congrè',app()->getLocale()) }}" ><p>{{ __("congre") }}</p></a>
-                              </li>
-                               <li class="nav-item">
-                                <a class="nav-link " href="{{route('login',app()->getLocale()) }} " >espace membre</a>
-                              </li>
-                               <li class="nav-item">
-                                <a class="nav-link " href="contact_us.html" >Contacter nous</a>
+                                <a class="nav-link " href="{{route('contacter',app()->getLocale()) }} " >{{ __("Contactez nous") }}</a>
                               </li>
                             </ul>
 
@@ -120,6 +111,10 @@
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('topic', app()->getLocale()) }}">
+
+                {{ __('creer un topic') }}
+            </a>
             <a class="dropdown-item" href="{{ route('logout', app()->getLocale()) }}"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -129,6 +124,8 @@
             <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
                 @csrf
             </form>
+
+
         </div>
     </li>
 @endguest
@@ -138,10 +135,10 @@
                     <div class="col-lg-3 d-none d-lg-block social-div">
                         <ul class="ulright">
                             <li>
-                                <i class="fab fa-facebook-square"></i>
+                              <a href="https://www.facebook.com/dorys.asso"> <i class="fab fa-facebook-square"></i></a>
                             </li>
                             <li>
-                                <i class="fab fa-twitter-square"></i>
+                              <a href="https://twitter.com/DORYS_Drepano"> <i class="fab fa-twitter-square"></i></a>
                             </li>
                             <li>
                                 <i class="fab fa-instagram"></i>
@@ -166,96 +163,42 @@
         @yield('content')
  </main>
     <div class="footer-ablove">
-        <div class="container">
-            <div class="row">
-                <p>Looking For Exclusive Services?
-                    <button class="btn btn-default">Donate Now</button>
-                </p>
-            </div>
-        </div>
+
     </div>
     <footer class="container-fluid footer-cont">
         <div class="container">
             <div class="footer-top row">
-                <div class="col-md-4 foot-logo">
-                    <h2>Charity for Educaton</h2>
+                <div class="col-md-6 foot-logo">
+                    <h1>{{ __(" DORYS ") }}</h1>
+                    <p>{{ __("association de lutte contre la drépanocytose") }}</p>
                 </div>
-                <div class="col-md-8 foot-addr">
-                    <p>Donec venenatis metus at diam condimentum pretiuteger aliquet a turpis quis pel len tesque ueta turpis quis venenatissolelementum</p>
+                <div class="col-md-6 foot-addr">
+
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Antonya Street, 23/H-2, Building, TA, AUS </li>
-                        <li><i class="fas fa-mobile-alt"></i> +177 b(089) 987665  </li>
-                        <li><i class="far fa-envelope"></i> support@smarteyeapps.com </li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1a place des Orprhelins
+                            67000 Strasbourg France</li>
+                        <li><i class="fas fa-mobile-alt"></i>  00 33 (0) 6 68 51 90 68  </li>
+                        <li><i class="far fa-envelope"></i> dorys.asso@gmail.com</li>
                     </ul>
                 </div>
             </div>
-            <div class="foot-botom row">
-                <div class="col-md-3">
-                    <div class="fotter-coo">
-                        <h5>IMPORTANT LINKS</h5>
-                        <ul>
-                            <li><i class="fas fa-caret-right"></i> ABOUT US</li>
-                            <li><i class="fas fa-caret-right"></i> COMPANY PROFILE</li>
-                            <li><i class="fas fa-caret-right"></i> OUR SERVICES</li>
-                            <li><i class="fas fa-caret-right"></i> CONTACT US</li>
-                            <li><i class="fas fa-caret-right"></i> READ BLOG</li>
-                        </ul>
-                    </div>
 
-                </div>
-                 <div class="col-md-4">
-                    <div class="fotter-coo">
-                        <h5>GLOBAL UPDATE NEWS</h5>
-                        <ul>
-                            <li><i class="fas fa-caret-right"></i> 100 CHILDREN RESCUE FROM WAR ZONE</li>
-                            <li><i class="fas fa-caret-right"></i> THR FRESH HOUSE CHILD</li>
-                            <li><i class="fas fa-caret-right"></i> CREATE AWARENESS IN EDUCATON</li>
-                            <li><i class="fas fa-caret-right"></i> WHAT HAPPEN WHEN WE LIVE!</li>
-                            <li><i class="fas fa-caret-right"></i> READ BLOG</li>
-                        </ul>
-                    </div>
 
-                </div>
-                <div class="col-md-5">
-                    <div class="fotter-coo">
-                        <h5>PHOTO GALLERY</h5>
-                        <div class="gallery-row row">
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/gallery/g1.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/gallery/g2.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/gallery/g3.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/gallery/g4.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/gallery/g1.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/gallery/g2.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
         </div>
     </footer>
 
      <div class="copy">
         <div class="container">
-            <a href="https://www.smarteyeapps.com/">2015 &copy; All Rights Reserved | Designed and Developed by Smarteyeapps</a>
+            <a href="">2020 &copy; All Rights Reserved | Designed and Developed by LYNDA ALGANI</a>
 
             <span>
-                <a><i class="fab fa-github"></i></a>
-                <a><i class="fab fa-google-plus-g"></i></a>
-                <a><i class="fab fa-pinterest-p"></i></a>
-                <a><i class="fab fa-twitter"></i></a>
-                <a><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href=""><i class="fab fa-google-plus-g"></i>
+                    <span>dorys.asso@gmail.com</span></a>
+               <a href=""><i class="fab fa-pinterest-p"></i></a>
+                <a href="https://twitter.com/DORYS_Drepano"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/dorys.asso"><i class="fab fa-facebook-f"></i></a>
         </span>
         </div>
 

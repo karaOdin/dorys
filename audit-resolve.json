@@ -1,0 +1,12 @@
+{
+  "decisions": {
+    "1500|laravel-mix>yargs>yargs-parser": {
+      "decision": "none",
+      "madeAt": 1597082474726,
+      "reason": "package was removed",
+      "expiresAt": 1598292041971
+    }
+  },
+  "rules": {},
+  "version": 1
+}
