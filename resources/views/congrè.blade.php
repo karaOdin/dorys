@@ -9,7 +9,7 @@
         <div class="row">
             <h2>{{ __("Nos événements") }}</h2>
             <ul>
-                <li> <a href="#"><i class="fas fa-home"></i> {{ __("Home") }}</a></li>
+                 <li> <a href="#"><i class="fas fa-home"></i> {{ __("Home") }}</a></li>
                 <li><i class="fas fa-angle-double-right"></i> {{ __("Events") }}</li>
             </ul>
         </div>
